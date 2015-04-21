@@ -1,11 +1,13 @@
-## The following functions are used to calculate and store the inverse
-## of a matrix in cache. When the inverse has to be calculated for 
-## the same data again, the value of the inverse is retrieved from 
-## the cache instead of calculating it all over again.
+## These functions are used to calculate and store the inverse
+## of a matrix in cache, which can be retrieved from the cache 
+## if the inverse is re-calculated for the same matrix.
 
-## The following function takes a matrix as an argument and create 
-## a list of 4 functions that can set the value, get the value, 
-## set the inverse, and get the inverse for the matrix passed as the argument
+## The following function takes a matrix as an argument and creates 
+## a list of 4 functions that -
+##  - set the value of the matrix in cache, 
+##  - get the value of the matrix from cache, 
+##  - set the value inverse matrix in cache, 
+##  - and get the value of inverse matrix from cache 
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
@@ -22,8 +24,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 ## The following function takes a matrix as an argument
-## and checks if its inverse has already been calculated
-## If calculated, the inverse is retrieved from cache
+## and checks if its inverse is stored in the cache
+## If yes, the inverse is retrieved from cache
 ## else, the inverse if calculated and stored in the cache
 
 cacheSolve <- function(x, ...) {
